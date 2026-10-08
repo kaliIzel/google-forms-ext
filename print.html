@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Exportar PDF</title>
+  <style>
+    @page { margin: 14mm; }
+    body { margin: 0; background: #f1f3f4; font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    #toolbar { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 20px; background: #fff; border-bottom: 1px solid #dadce0; font-size: 13px; color: #5f6368; }
+    #btnPrint { border: 0; border-radius: 8px; padding: 8px 16px; background: #1a73e8; color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+    #root { max-width: 820px; margin: 16px auto; padding: 24px 32px; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+    @media print {
+      body { background: #fff; }
+      #toolbar { display: none; }
+      #root { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="toolbar">
+    <span id="msg">Preparando documento…</span>
+    <button id="btnPrint" type="button">Imprimir / Guardar como PDF</button>
+  </div>
+  <div id="root"></div>
+  <script src="print.js"></script>
+</body>
+</html>

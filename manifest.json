@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Google Forms Extractor & Document Generator",
+  "version": "2.0.0",
+  "description": "Extrae formularios de Google Forms a Markdown, JSON y PDF sin perder instrucciones ni imágenes.",
+  "permissions": ["activeTab", "scripting", "storage", "unlimitedStorage"],
+  "host_permissions": ["https://docs.google.com/forms/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Google Forms Extractor"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/forms/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
