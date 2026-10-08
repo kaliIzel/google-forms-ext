@@ -1,0 +1,15 @@
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependencias y empaquetados
+node_modules/
+*.zip
+*.crx
+*.pem
+
+# Exportaciones de prueba
+google-form-*.json
+*.log

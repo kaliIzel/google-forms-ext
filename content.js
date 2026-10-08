@@ -829,5 +829,8 @@
     return true; // respuesta asíncrona
   };
 
+  // La barra flotante (bar.js) comparte este mundo aislado y reutiliza el extractor
+  window.__gfExtract = extractForm;
+
   chrome.runtime.onMessage.addListener(handleMessage);
 })();
